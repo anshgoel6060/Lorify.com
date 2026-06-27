@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Mode - Lorify</title>
+    <meta name="description" content="Get gentle emotional support and validation from AI">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">LORIFY</a>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="modes.html" class="nav-link">All Modes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="mode-page">
+        <div class="container">
+            <!-- Mode Header -->
+            <div class="mode-page-header">
+                <div class="mode-page-icon">🧘</div>
+                <div>
+                    <h1 class="mode-page-title">Therapy Mode</h1>
+                    <p class="mode-page-subtitle">A safe space for your feelings. Sometimes you don't need roasting - you need validation.</p>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="mode-info-section">
+                <div class="info-card">
+                    <h3>💚 What You'll Get</h3>
+                    <ul class="info-list">
+                        <li>✨ Gentle emotional validation</li>
+                        <li>🤗 Compassionate understanding</li>
+                        <li>💭 Non-judgmental support</li>
+                        <li>🌟 Helpful perspectives</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>🧘 Perfect For</h3>
+                    <ul class="info-list">
+                        <li>When you're going through it</li>
+                        <li>Need someone to say "that's valid"</li>
+                        <li>Feeling overwhelmed or anxious</li>
+                        <li>Processing emotions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section therapy-section">
+                <label class="input-label">Share what's on your mind 💭</label>
+                <p class="input-hint">This is a judgment-free zone. Share whatever you're feeling.</p>
+                <textarea 
+                    id="therapy-input" 
+                    class="text-input" 
+                    placeholder="I'm feeling anxious about..."
+                    maxlength="2000"
+                    oninput="updateCharCount('therapy-input', 'therapy-char-count')"
+                ></textarea>
+                <div class="input-footer">
+                    <span id="therapy-char-count" class="char-count">0/2000 characters</span>
+                    <button class="primary-btn therapy-btn" onclick="generateTherapy()">
+                        <span id="therapy-btn-text">Get Support 🧘</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="therapy-loading" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Creating a supportive response... 🧘</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="therapy-error" class="error-state" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops!</h3>
+                <p id="therapy-error-message"></p>
+                <button class="secondary-btn" onclick="retryTherapy()">Try Again</button>
+            </div>
+
+            <!-- Result Section -->
+            <div id="therapy-result" class="result-section" style="display: none;">
+                <div class="result-card therapy-result">
+                    <div class="result-header">
+                        <div class="result-title-group">
+                            <span class="result-emoji">🧘</span>
+                            <div>
+                                <h2 class="result-title">Support Message</h2>
+                                <p class="result-subtitle">You're heard and validated</p>
+                            </div>
+                        </div>
+                        <div class="result-brand">lorify.app</div>
+                    </div>
+                    <div class="result-content therapy-content">
+                        <p id="therapy-text"></p>
+                    </div>
+                    <div class="therapy-reminder">
+                        <p>💚 Remember: This is AI-generated support. For serious concerns, please reach out to a mental health professional.</p>
+                    </div>
+                    <div class="result-actions">
+                        <button class="action-btn" onclick="copyToClipboard('therapy-text')">📋 Copy</button>
+                        <button class="action-btn" onclick="shareResult('therapy')">🔄 Share</button>
+                        <button class="action-btn" onclick="resetTherapy()">🧘 Get More Support</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Scenarios -->
+            <div class="examples-section">
+                <h3 class="examples-title">Try These Topics</h3>
+                <div class="examples-grid">
+                    <button class="example-chip" onclick="fillExample('therapy-input', 'I feel like I\'m not good enough and everyone is doing better than me')">
+                        Imposter syndrome feelings
+                    </button>
+                    <button class="example-chip" onclick="fillExample('therapy-input', 'I\'m overwhelmed with everything and don\'t know where to start')">
+                        Feeling overwhelmed
+                    </button>
+                    <button class="example-chip" onclick="fillExample('therapy-input', 'I made a mistake at work and I can\'t stop thinking about it')">
+                        Anxiety about mistakes
+                    </button>
+                    <button class="example-chip" onclick="fillExample('therapy-input', 'Nobody understands what I\'m going through')">
+                        Feeling alone
+                    </button>
+                </div>
+            </div>
+
+            <!-- Try Other Modes -->
+            <div class="other-modes">
+                <h3 class="other-modes-title">Try Other Modes</h3>
+                <div class="other-modes-grid">
+                    <a href="hype.html" class="other-mode-card">
+                        <span class="other-mode-icon">🚀</span>
+                        <span class="other-mode-name">Hype Mode</span>
+                    </a>
+                    <a href="advice.html" class="other-mode-card">
+                        <span class="other-mode-icon">💡</span>
+                        <span class="other-mode-name">Advice Mode</span>
+                    </a>
+                    <a href="roast.html" class="other-mode-card">
+                        <span class="other-mode-icon">🔥</span>
+                        <span class="other-mode-name">Roast Mode</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">LORIFY</h3>
+                    <p class="footer-tagline">The internet reacting to your life 💀</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Modes</h4>
+                    <ul class="footer-links">
+                        <li><a href="roast.html">Roast Mode</a></li>
+                        <li><a href="court.html">Court Mode</a></li>
+                        <li><a href="therapy.html">Therapy Mode</a></li>
+                        <li><a href="modes.html">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lorify. Made for the chronically online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        function fillExample(inputId, text) {
+            document.getElementById(inputId).value = text;
+            updateCharCount(inputId, inputId.replace('-input', '-char-count'));
+            document.getElementById(inputId).scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>

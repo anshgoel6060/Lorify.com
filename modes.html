@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Modes - Lorify</title>
+    <meta name="description" content="Explore all 8 AI-powered modes on Lorify">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">LORIFY</a>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="modes.html" class="nav-link active">All Modes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">All Modes</h1>
+            <p class="page-subtitle">Choose your flavor of chaos. 8 different ways to get roasted by AI.</p>
+        </div>
+    </section>
+
+    <!-- Modes Grid -->
+    <section class="all-modes">
+        <div class="container">
+            <!-- Roast Mode -->
+            <div class="mode-detail-card roast-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">🔥</div>
+                    <div>
+                        <h2 class="mode-detail-title">Roast Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge hot">Most Popular</span>
+                            <span class="mode-badge">5 Personalities</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Get brutally honest roasts from AI. Choose from 5 different personalities: 
+                    Savage Gen Z, Indian Parent, Anime Narrator, Therapist, or Toxic Bestie. 
+                    Upload your Spotify playlist, paste your bio, or share your life situation and prepare for emotional damage.
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">✨ 5 Personalities</div>
+                    <div class="feature-tag">⚡ Instant Results</div>
+                    <div class="feature-tag">📱 Shareable</div>
+                </div>
+                <a href="roast.html" class="btn btn-primary">Try Roast Mode →</a>
+            </div>
+
+            <!-- Court Mode -->
+            <div class="mode-detail-card court-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">⚖️</div>
+                    <div>
+                        <h2 class="mode-detail-title">Court Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge trending">Trending</span>
+                            <span class="mode-badge">Drama Resolution</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Present your relationship drama to the AI judge. Get dramatic verdicts, 
+                    red flag scores (0-10), emotional damage ratings, and savage observations. 
+                    Perfect for settling arguments, exposing toxic behavior, and getting unbiased judgment.
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">⚖️ Verdicts</div>
+                    <div class="feature-tag">🚩 Red Flag Scores</div>
+                    <div class="feature-tag">💔 Damage Ratings</div>
+                </div>
+                <a href="court.html" class="btn btn-primary">Try Court Mode →</a>
+            </div>
+
+            <!-- Advice Mode -->
+            <div class="mode-detail-card advice-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">💡</div>
+                    <div>
+                        <h2 class="mode-detail-title">Advice Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge new">New</span>
+                            <span class="mode-badge">Life Guidance</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Get questionable life advice from different perspectives. Ask about career choices, 
+                    relationship decisions, or life dilemmas. AI provides advice ranging from 
+                    genuinely helpful to hilariously terrible - you decide which to follow!
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">🎯 Practical Tips</div>
+                    <div class="feature-tag">🤔 Multiple Angles</div>
+                    <div class="feature-tag">😂 Humor Included</div>
+                </div>
+                <a href="advice.html" class="btn btn-primary">Try Advice Mode →</a>
+            </div>
+
+            <!-- Therapy Mode -->
+            <div class="mode-detail-card therapy-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">🧘</div>
+                    <div>
+                        <h2 class="mode-detail-title">Therapy Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge">Wholesome</span>
+                            <span class="mode-badge">Support</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Sometimes you don't need roasting - you need validation. Get gentle emotional 
+                    support, validation for your feelings, and compassionate responses. Perfect for 
+                    when you're going through it and need someone to say "that's valid."
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">💚 Empathetic</div>
+                    <div class="feature-tag">🤗 Validating</div>
+                    <div class="feature-tag">🌟 Supportive</div>
+                </div>
+                <a href="therapy.html" class="btn btn-primary">Try Therapy Mode →</a>
+            </div>
+
+            <!-- Hype Mode -->
+            <div class="mode-detail-card hype-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">🚀</div>
+                    <div>
+                        <h2 class="mode-detail-title">Hype Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge new">New</span>
+                            <span class="mode-badge">Motivation</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Need a confidence boost? AI hypes you up like you're the main character. 
+                    Share your achievements, goals, or just your existence and get epic pep talks 
+                    that make you feel like you can conquer the world. Maximum energy only! 💪
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">⚡ Energy Boost</div>
+                    <div class="feature-tag">💪 Confidence</div>
+                    <div class="feature-tag">🎉 Celebration</div>
+                </div>
+                <a href="hype.html" class="btn btn-primary">Try Hype Mode →</a>
+            </div>
+
+            <!-- Story Mode -->
+            <div class="mode-detail-card story-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">📖</div>
+                    <div>
+                        <h2 class="mode-detail-title">Story Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge">Creative</span>
+                            <span class="mode-badge">Entertainment</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Turn your everyday drama into an epic narrative. AI transforms your life 
+                    situations into dramatic stories with plot twists, character development, 
+                    and cinematic flair. Your messy group chat becomes a thriller novel!
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">📚 Epic Narratives</div>
+                    <div class="feature-tag">🎬 Dramatic Flair</div>
+                    <div class="feature-tag">✍️ Creative Writing</div>
+                </div>
+                <a href="story.html" class="btn btn-primary">Try Story Mode →</a>
+            </div>
+
+            <!-- Debate Mode -->
+            <div class="mode-detail-card debate-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">💬</div>
+                    <div>
+                        <h2 class="mode-detail-title">Debate Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge">Intellectual</span>
+                            <span class="mode-badge">Both Sides</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    Have a hot take or controversial opinion? AI argues both sides with equal 
+                    passion. Perfect for settling debates, exploring perspectives, or just 
+                    watching AI roast your opinions from multiple angles. No opinion is safe!
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">🔥 Hot Takes</div>
+                    <div class="feature-tag">🧠 Both Sides</div>
+                    <div class="feature-tag">💭 Perspective</div>
+                </div>
+                <a href="debate.html" class="btn btn-primary">Try Debate Mode →</a>
+            </div>
+
+            <!-- Fortune Mode -->
+            <div class="mode-detail-card fortune-card">
+                <div class="mode-detail-header">
+                    <div class="mode-detail-icon">🔮</div>
+                    <div>
+                        <h2 class="mode-detail-title">Fortune Mode</h2>
+                        <div class="mode-tags">
+                            <span class="mode-badge">Mystical</span>
+                            <span class="mode-badge">Future Prediction</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="mode-detail-desc">
+                    AI predicts your chaotic future based on your current life choices. Get 
+                    dramatic prophecies, timeline predictions, and warnings about where your 
+                    decisions are leading. Part fortune teller, part roast, all entertainment!
+                </p>
+                <div class="mode-features">
+                    <div class="feature-tag">🔮 Predictions</div>
+                    <div class="feature-tag">⏰ Timeline</div>
+                    <div class="feature-tag">⚠️ Warnings</div>
+                </div>
+                <a href="fortune.html" class="btn btn-primary">Try Fortune Mode →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Can't Decide?</h2>
+                <p class="cta-subtitle">Start with Roast Mode - it's our most popular for a reason!</p>
+                <a href="roast.html" class="btn btn-primary btn-large">Start Roasting 🔥</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">LORIFY</h3>
+                    <p class="footer-tagline">The internet reacting to your life 💀</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Modes</h4>
+                    <ul class="footer-links">
+                        <li><a href="roast.html">Roast Mode</a></li>
+                        <li><a href="court.html">Court Mode</a></li>
+                        <li><a href="advice.html">Advice Mode</a></li>
+                        <li><a href="therapy.html">Therapy Mode</a></li>
+                        <li><a href="modes.html">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lorify. Made for the chronically online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Mode - Lorify</title>
+    <meta name="description" content="Transform your drama into epic cinematic narratives">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">LORIFY</a>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="modes.html" class="nav-link">All Modes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="mode-page">
+        <div class="container">
+            <!-- Mode Header -->
+            <div class="mode-page-header">
+                <div class="mode-page-icon">📖</div>
+                <div>
+                    <h1 class="mode-page-title">Story Mode</h1>
+                    <p class="mode-page-subtitle">Your life is a movie. Turn everyday drama into epic cinematic narratives! 🎬</p>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="mode-info-section">
+                <div class="info-card story-info">
+                    <h3>📚 What You'll Get</h3>
+                    <ul class="info-list">
+                        <li>🎬 Cinematic storytelling of your life</li>
+                        <li>✨ Dramatic plot twists and foreshadowing</li>
+                        <li>🎭 Character development and vivid descriptions</li>
+                        <li>📖 Movie-worthy narratives</li>
+                    </ul>
+                </div>
+                <div class="info-card story-info">
+                    <h3>🌟 Perfect For</h3>
+                    <ul class="info-list">
+                        <li>Making mundane situations epic</li>
+                        <li>Sharing your drama artistically</li>
+                        <li>Creating main character moments</li>
+                        <li>Turning cringe into content</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section story-section">
+                <label class="input-label">What's your story? 📖</label>
+                <p class="input-hint">Share your drama, and watch it transform into an epic narrative.</p>
+                <textarea 
+                    id="story-input" 
+                    class="text-input" 
+                    placeholder="I ran into my ex at the grocery store today..."
+                    maxlength="2000"
+                    oninput="updateCharCount('story-input', 'story-char-count')"
+                ></textarea>
+                <div class="input-footer">
+                    <span id="story-char-count" class="char-count">0/2000 characters</span>
+                    <button class="primary-btn story-btn" onclick="generateStory()">
+                        <span id="story-btn-text">Create Story 📖</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="story-loading" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Crafting your epic narrative... 📖</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="story-error" class="error-state" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops!</h3>
+                <p id="story-error-message"></p>
+                <button class="secondary-btn" onclick="retryStory()">Try Again</button>
+            </div>
+
+            <!-- Result Section -->
+            <div id="story-result" class="result-section" style="display: none;">
+                <div class="result-card story-result">
+                    <div class="result-header">
+                        <div class="result-title-group">
+                            <span class="result-emoji">📖</span>
+                            <div>
+                                <h2 class="result-title">Your Epic Story</h2>
+                                <p class="result-subtitle">Main character energy achieved</p>
+                            </div>
+                        </div>
+                        <div class="result-brand">lorify.app</div>
+                    </div>
+                    <div class="result-content story-content">
+                        <p id="story-text"></p>
+                    </div>
+                    <div class="story-reminder">
+                        <p>🎬 Every moment is a plot point. You're the main character.</p>
+                    </div>
+                    <div class="result-actions">
+                        <button class="action-btn" onclick="copyToClipboard('story-text')">📋 Copy</button>
+                        <button class="action-btn" onclick="shareResult('story')">🔄 Share</button>
+                        <button class="action-btn" onclick="resetStory()">📖 Another Story</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example Scenarios -->
+            <div class="examples-section">
+                <h3 class="examples-title">Story Ideas</h3>
+                <div class="examples-grid">
+                    <button class="example-chip" onclick="fillExample('story-input', 'I ran into my ex at the grocery store and they were with their new partner')">
+                        🛒 The Ex Encounter
+                    </button>
+                    <button class="example-chip" onclick="fillExample('story-input', 'I accidentally sent a screenshot to the person I was talking about')">
+                        📱 The Sent Screenshot
+                    </button>
+                    <button class="example-chip" onclick="fillExample('story-input', 'My crush liked my Instagram post from 2 years ago at 3am')">
+                        💕 The Late Night Like
+                    </button>
+                    <button class="example-chip" onclick="fillExample('story-input', 'I waved at someone who was actually waving at the person behind me')">
+                        👋 The Awkward Wave
+                    </button>
+                    <button class="example-chip" onclick="fillExample('story-input', 'I realized everyone in the group chat saw my typing bubble for 10 minutes')">
+                        💬 The Typing Bubble
+                    </button>
+                    <button class="example-chip" onclick="fillExample('story-input', 'My dog barked during my important video meeting with my boss')">
+                        🐕 The Meeting Disaster
+                    </button>
+                </div>
+            </div>
+
+            <!-- Story Tips -->
+            <div class="tips-section">
+                <h3>💡 Pro Tips for Epic Stories</h3>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎬</div>
+                        <h4>Include Details</h4>
+                        <p>The more details you share, the more cinematic your story becomes</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">😱</div>
+                        <h4>Share the Drama</h4>
+                        <p>Awkward, cringe, or chaotic moments make the best stories</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">📱</div>
+                        <h4>Perfect for Sharing</h4>
+                        <p>These narratives are screenshot-worthy and share-ready</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Try Other Modes -->
+            <div class="other-modes">
+                <h3 class="other-modes-title">Try Other Modes</h3>
+                <div class="other-modes-grid">
+                    <a href="debate.html" class="other-mode-card">
+                        <span class="other-mode-icon">⚔️</span>
+                        <span class="other-mode-name">Debate Mode</span>
+                    </a>
+                    <a href="hype.html" class="other-mode-card">
+                        <span class="other-mode-icon">🚀</span>
+                        <span class="other-mode-name">Hype Mode</span>
+                    </a>
+                    <a href="fortune.html" class="other-mode-card">
+                        <span class="other-mode-icon">🔮</span>
+                        <span class="other-mode-name">Fortune Mode</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">LORIFY</h3>
+                    <p class="footer-tagline">The internet reacting to your life 💀</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Modes</h4>
+                    <ul class="footer-links">
+                        <li><a href="roast.html">Roast Mode</a></li>
+                        <li><a href="story.html">Story Mode</a></li>
+                        <li><a href="hype.html">Hype Mode</a></li>
+                        <li><a href="modes.html">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lorify. Made for the chronically online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
+    <script>
+        function fillExample(inputId, text) {
+            document.getElementById(inputId).value = text;
+            updateCharCount(inputId, inputId.replace('-input', '-char-count'));
+            document.getElementById(inputId).scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>

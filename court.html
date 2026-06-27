@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Mode - Lorify</title>
+    <meta name="description" content="AI judges your relationship drama and delivers verdicts">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">LORIFY</a>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="modes.html" class="nav-link">All Modes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="mode-page">
+        <div class="container">
+            <!-- Mode Header -->
+            <div class="mode-page-header">
+                <div class="mode-page-icon">⚖️</div>
+                <div>
+                    <h1 class="mode-page-title">Court Mode</h1>
+                    <p class="mode-page-subtitle">The Court of Internet Drama is now in session.</p>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <label class="input-label">Present your case</label>
+                <textarea 
+                    id="court-input" 
+                    class="text-input court-input" 
+                    placeholder="Paste your chat screenshots, describe the situation, or explain the drama..."
+                    maxlength="3000"
+                    oninput="updateCharCount('court-input', 'court-char-count')"
+                ></textarea>
+                <div class="input-footer">
+                    <span id="court-char-count" class="char-count">0/3000 characters</span>
+                    <button class="primary-btn court-btn" onclick="generateVerdict()">
+                        <span id="court-btn-text">Get Verdict ⚖️</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="court-loading" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>The court is deliberating... ⚖️</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="court-error" class="error-state" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops!</h3>
+                <p id="court-error-message"></p>
+                <button class="secondary-btn" onclick="retryVerdict()">Try Again</button>
+            </div>
+
+            <!-- Result Section -->
+            <div id="court-result" class="result-section" style="display: none;">
+                <div class="result-card court-result">
+                    <div class="result-header">
+                        <h2 id="verdict-title" class="verdict-title">GUILTY</h2>
+                        <span id="verdict-emoji" class="verdict-emoji">😤</span>
+                    </div>
+                    <div class="result-content">
+                        <p id="verdict-ruling"></p>
+                    </div>
+                    
+                    <!-- Scores -->
+                    <div class="scores-grid">
+                        <div class="score-card">
+                            <div class="score-label">Red Flags</div>
+                            <div class="score-value">
+                                <span id="red-flag-score" class="score-number">0</span>
+                                <span class="score-max">/10 🚩</span>
+                            </div>
+                        </div>
+                        <div class="score-card">
+                            <div class="score-label">Emotional Damage</div>
+                            <div class="score-value">
+                                <span id="emotional-damage-score" class="score-number">0</span>
+                                <span class="score-max">/10 💔</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Funniest Observation -->
+                    <div class="observation-card">
+                        <div class="observation-label">Funniest Observation:</div>
+                        <p id="funniest-observation" class="observation-text"></p>
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="action-btn" onclick="copyToClipboard('verdict-ruling')">📋 Copy</button>
+                        <button class="action-btn" onclick="shareResult('court')">🔄 Share</button>
+                        <button class="action-btn" onclick="resetCourt()">⚖️ Judge Another</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Try Other Modes -->
+            <div class="other-modes">
+                <h3 class="other-modes-title">Try Other Modes</h3>
+                <div class="other-modes-grid">
+                    <a href="roast.html" class="other-mode-card">
+                        <span class="other-mode-icon">🔥</span>
+                        <span class="other-mode-name">Roast Mode</span>
+                    </a>
+                    <a href="advice.html" class="other-mode-card">
+                        <span class="other-mode-icon">💡</span>
+                        <span class="other-mode-name">Advice Mode</span>
+                    </a>
+                    <a href="therapy.html" class="other-mode-card">
+                        <span class="other-mode-icon">🧘</span>
+                        <span class="other-mode-name">Therapy Mode</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">LORIFY</h3>
+                    <p class="footer-tagline">The internet reacting to your life 💀</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Modes</h4>
+                    <ul class="footer-links">
+                        <li><a href="roast.html">Roast Mode</a></li>
+                        <li><a href="court.html">Court Mode</a></li>
+                        <li><a href="advice.html">Advice Mode</a></li>
+                        <li><a href="modes.html">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lorify. Made for the chronically online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>

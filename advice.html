@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapy Mode - Lorify</title>
+    <meta name="description" content="Get gentle emotional support and validation from AI">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">LORIFY</a>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="modes.html" class="nav-link">All Modes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="mode-page">
+        <div class="container">
+            <!-- Mode Header -->
+            <div class="mode-page-header">
+                <div class="mode-page-icon">💡</div>
+                <div>
+                    <h1 class="mode-page-title">Advice Mode</h1>
+                    <p class="mode-page-subtitle">Get life advice from different perspectives. Results may vary from helpful to hilarious.</p>
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <label class="input-label">What do you need advice on?</label>
+                <textarea 
+                    id="advice-input" 
+                    class="text-input" 
+                    placeholder="e.g., 'Should I quit my job to become a TikToker?' or 'How do I tell my friend their cooking is terrible?'"
+                    maxlength="2000"
+                    oninput="updateCharCount('advice-input', 'advice-char-count')"
+                ></textarea>
+                <div class="input-footer">
+                    <span id="advice-char-count" class="char-count">0/2000 characters</span>
+                    <button class="primary-btn advice-btn" onclick="generateAdvice()">
+                        <span id="advice-btn-text">Get Advice 💡</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading State -->
+            <div id="advice-loading" class="loading-state" style="display: none;">
+                <div class="spinner"></div>
+                <p>Consulting the AI wisdom... 💡</p>
+            </div>
+
+            <!-- Error State -->
+            <div id="advice-error" class="error-state" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops!</h3>
+                <p id="advice-error-message"></p>
+                <button class="secondary-btn" onclick="retryAdvice()">Try Again</button>
+            </div>
+
+            <!-- Result Section -->
+            <div id="advice-result" class="result-section" style="display: none;">
+                <div class="result-card advice-result">
+                    <div class="result-header">
+                        <div class="result-title-group">
+                            <span class="result-emoji">💡</span>
+                            <div>
+                                <h2 class="result-title">Advice</h2>
+                                <p class="result-subtitle">by Lorify AI</p>
+                            </div>
+                        </div>
+                        <div class="result-brand">lorify.app</div>
+                    </div>
+                    <div class="result-content">
+                        <p id="advice-text"></p>
+                    </div>
+                    <div class="result-actions">
+                        <button class="action-btn" onclick="copyToClipboard('advice-text')">📋 Copy</button>
+                        <button class="action-btn" onclick="shareResult('advice')">🔄 Share</button>
+                        <button class="action-btn" onclick="resetAdvice()">💡 Get More Advice</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Try Other Modes -->
+            <div class="other-modes">
+                <h3 class="other-modes-title">Try Other Modes</h3>
+                <div class="other-modes-grid">
+                    <a href="roast.html" class="other-mode-card">
+                        <span class="other-mode-icon">🔥</span>
+                        <span class="other-mode-name">Roast Mode</span>
+                    </a>
+                    <a href="therapy.html" class="other-mode-card">
+                        <span class="other-mode-icon">🧘</span>
+                        <span class="other-mode-name">Therapy Mode</span>
+                    </a>
+                    <a href="hype.html" class="other-mode-card">
+                        <span class="other-mode-icon">🚀</span>
+                        <span class="other-mode-name">Hype Mode</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">LORIFY</h3>
+                    <p class="footer-tagline">The internet reacting to your life 💀</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Modes</h4>
+                    <ul class="footer-links">
+                        <li><a href="roast.html">Roast Mode</a></li>
+                        <li><a href="court.html">Court Mode</a></li>
+                        <li><a href="advice.html">Advice Mode</a></li>
+                        <li><a href="modes.html">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy</a></li>
+                        <li><a href="terms.html">Terms</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lorify. Made for the chronically online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="navigation.js"></script>
+</body>
+</html>

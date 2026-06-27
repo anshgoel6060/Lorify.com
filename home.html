@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorify - AI-Powered Social Entertainment Platform</title>
+    <meta name="description" content="The internet reacting to your life. AI-powered roasts, verdicts, advice, and more!">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lorify - The Internet Reacting to Your Life">
+    <meta property="og:description" content="AI-powered social entertainment with 8 unique modes">
+    <meta property="og:image" content="https://lorify.app/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">LORIFY</a>
+            <div class="nav-menu">
+                <a href="home.html" class="nav-link active">Home</a>
+                <a href="modes.html" class="nav-link">All Modes</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="how-it-works.html" class="nav-link">How It Works</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+            </div>
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">The Internet</span>
+                    <br>Reacting to Your Life
+                </h1>
+                <p class="hero-subtitle">
+                    AI-powered roasts, verdicts, advice, and more. 
+                    Get brutally honest reactions to your life situations. 💀
+                </p>
+                <div class="hero-buttons">
+                    <a href="modes.html" class="btn btn-primary">Explore All Modes 🔥</a>
+                    <a href="how-it-works.html" class="btn btn-secondary">How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">AI Modes</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Personalities</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Roasts</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Modes -->
+    <section class="featured-modes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Modes</h2>
+                <p class="section-subtitle">Choose your flavor of chaos</p>
+            </div>
+
+            <div class="modes-grid">
+                <!-- Roast Mode -->
+                <a href="roast.html" class="mode-card roast-card">
+                    <div class="mode-icon">🔥</div>
+                    <h3 class="mode-name">Roast Mode</h3>
+                    <p class="mode-desc">Get brutally roasted by AI with 5 different personalities</p>
+                    <div class="mode-tag hot">Most Popular</div>
+                </a>
+
+                <!-- Court Mode -->
+                <a href="court.html" class="mode-card court-card">
+                    <div class="mode-icon">⚖️</div>
+                    <h3 class="mode-name">Court Mode</h3>
+                    <p class="mode-desc">AI judges your relationship drama and delivers verdicts</p>
+                    <div class="mode-tag">Trending</div>
+                </a>
+
+                <!-- Advice Mode -->
+                <a href="advice.html" class="mode-card advice-card">
+                    <div class="mode-icon">💡</div>
+                    <h3 class="mode-name">Advice Mode</h3>
+                    <p class="mode-desc">Get questionable life advice from different perspectives</p>
+                    <div class="mode-tag new">New</div>
+                </a>
+
+                <!-- Therapy Mode -->
+                <a href="therapy.html" class="mode-card therapy-card">
+                    <div class="mode-icon">🧘</div>
+                    <h3 class="mode-name">Therapy Mode</h3>
+                    <p class="mode-desc">Gentle emotional support and validation for your feelings</p>
+                </a>
+
+                <!-- Hype Mode -->
+                <a href="hype.html" class="mode-card hype-card">
+                    <div class="mode-icon">🚀</div>
+                    <h3 class="mode-name">Hype Mode</h3>
+                    <p class="mode-desc">Get hyped up like you're the main character</p>
+                    <div class="mode-tag new">New</div>
+                </a>
+
+                <!-- Story Mode -->
+                <a href="story.html" class="mode-card story-card">
+                    <div class="mode-icon">📖</div>
+                    <h3 class="mode-name">Story Mode</h3>
+                    <p class="mode-desc">Turn your drama into an epic narrative adventure</p>
+                </a>
+
+                <!-- Debate Mode -->
+                <a href="debate.html" class="mode-card debate-card">
+                    <div class="mode-icon">💬</div>
+                    <h3 class="mode-name">Debate Mode</h3>
+                    <p class="mode-desc">AI argues both sides of your controversial take</p>
+                </a>
+
+                <!-- Fortune Mode -->
+                <a href="fortune.html" class="mode-card fortune-card">
+                    <div class="mode-icon">🔮</div>
+                    <h3 class="mode-name">Fortune Mode</h3>
+                    <p class="mode-desc">AI predicts your chaotic future based on current choices</p>
+                </a>
+            </div>
+
+            <div class="section-footer">
+                <a href="modes.html" class="btn btn-outline">View All Modes →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Lorify?</h2>
+                <p class="section-subtitle">More than just roasts</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">5 AI Personalities</h3>
+                    <p class="feature-desc">From Savage Gen Z to Therapist - choose your vibe</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Instant Results</h3>
+                    <p class="feature-desc">Get AI-generated responses in seconds</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Share Anywhere</h3>
+                    <p class="feature-desc">Screenshot-worthy results perfect for social media</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3 class="feature-title">8 Unique Modes</h3>
+                    <p class="feature-desc">Different modes for every situation</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">100% Anonymous</h3>
+                    <p class="feature-desc">No login required. Your drama stays private.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🆓</div>
+                    <h3 class="feature-title">Free to Use</h3>
+                    <p class="feature-desc">Unlimited roasts, verdicts, and advice</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three simple steps to emotional damage</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Choose Your Mode</h3>
+                    <p class="step-desc">Pick from 8 different AI-powered modes</p>
+                </div>
+
+                <div class="step-arrow">→</div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Share Your Situation</h3>
+                    <p class="step-desc">Type your drama, playlist, or life situation</p>
+                </div>
+
+                <div class="step-arrow">→</div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Get Roasted</h3>
+                    <p class="step-desc">Receive AI-generated reactions in seconds</p>
+                </div>
+            </div>
+
+            <div class="section-footer">
+                <a href="modes.html" class="btn btn-primary">Start Now 🔥</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What People Say</h2>
+                <p class="section-subtitle">Real reactions from real people getting roasted</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"I came for the roasts, stayed for the emotional damage. 10/10 would get destroyed again."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">😭</div>
+                        <div>
+                            <div class="author-name">@chronically_online</div>
+                            <div class="author-title">Gen Z Survivor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The Court Mode exposed my toxic relationship patterns better than my actual therapist. I'm scared but grateful."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">💀</div>
+                        <div>
+                            <div class="author-name">@red_flag_collector</div>
+                            <div class="author-title">Relationship Drama Queen</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Indian Parent personality called out my life choices so accurately, I had to check if my mom made this."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🤦</div>
+                        <div>
+                            <div class="author-name">@desi_disappointment</div>
+                            <div class="author-title">Sharma Ji's Son Competitor</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Get Roasted?</h2>
+                <p class="cta-subtitle">Join thousands of people getting brutally honest AI reactions</p>
+                <a href="modes.html" class="btn btn-primary btn-large">Start Roasting Now 🔥</a>
+                <p class="cta-note">No signup required • 100% free • Unlimited use</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-logo">LORIFY</h3>
+                    <p class="footer-tagline">The internet reacting to your life 💀</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">TikTok</a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Modes</h4>
+                    <ul class="footer-links">
+                        <li><a href="roast.html">Roast Mode</a></li>
+                        <li><a href="court.html">Court Mode</a></li>
+                        <li><a href="advice.html">Advice Mode</a></li>
+                        <li><a href="therapy.html">Therapy Mode</a></li>
+                        <li><a href="modes.html">View All</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lorify. Made for the chronically online.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navigation.js"></script>
+</body>
+</html>
